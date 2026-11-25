@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FixPoint — ремонт смартфонов, диагностика и настройка.">
+  <title>FixPoint — ремонт смартфонов</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home"><span class="logo-mark">F</span> FixPoint</a>
+    <nav class="nav" id="nav">
+      <a href="#services" data-i18n="navServices">Услуги</a>
+      <a href="#prices" data-i18n="navPrices">Цены</a>
+      <a href="#about" data-i18n="navAbout">О нас</a>
+      <a href="#contact" data-i18n="navContacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-btn" id="languageToggle" type="button" aria-label="Switch language">EN</button>
+      <a class="header-phone" href="tel:+78005553535">8 (800) 555-35-35</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="eyebrow">СЕРВИСНЫЙ ЦЕНТР FIXPOINT</p>
+        <h1 data-i18n="heroTitle">Вернём вашему<br><span>смартфону жизнь</span></h1>
+        <p class="hero-text" data-i18n="heroText">Профессиональный ремонт телефонов, честные цены и гарантия на выполненные работы.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#request" data-i18n="requestBtn">Оставить заявку</a>
+          <a class="btn btn-outline" href="#services" data-i18n="servicesBtn">Наши услуги</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>5 лет</strong><small data-i18n="experience">опыта работы</small></div>
+          <div><strong>2 000+</strong><small data-i18n="repairs">ремонтов</small></div>
+          <div><strong>До 90 дней</strong><small data-i18n="warranty">гарантия</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-glow"></div>
+        <div class="phone"><div class="phone-camera"></div><div class="phone-screen"><div class="screen-icon">✓</div><b>FIXED</b><small data-i18n="fixed">Снова работает</small></div></div>
+        <div class="floating-card">✦ <span data-i18n="diagnostics">Диагностика</span><br><b data-i18n="free">Бесплатно</b></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="serviceEyebrow">ЧТО МЫ РЕМОНТИРУЕМ</p>
+        <h2 data-i18n="servicesTitle">Популярные услуги</h2>
+        <p data-i18n="servicesIntro">Подберём решение для вашей неисправности.</p>
+      </div>
+      <div class="service-tools">
+        <input id="serviceSearch" type="search" placeholder="Поиск услуги..." data-i18n-placeholder="searchPlaceholder" aria-label="Поиск услуг">
+        <div class="filter-buttons" aria-label="Фильтр услуг">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">Все</button>
+          <button class="filter-btn" data-filter="hardware" data-i18n="filterHardware">Комплектующие</button>
+          <button class="filter-btn" data-filter="software" data-i18n="filterSoftware">Программное</button>
+        </div>
+      </div>
+      <div class="service-grid" id="serviceGrid">
+        <article class="service-card reveal" data-category="hardware" data-title="Замена экрана" data-en-title="Screen replacement" data-details="Установим новый дисплей, проверим сенсор и качество изображения." data-en-details="We install a new display and check touch response and image quality." data-price="от 2 500 ₽">
+          <div class="service-icon">▣</div><h3 data-i18n="screen">Замена экрана</h3><p data-i18n="screenDesc">Если дисплей разбит, появились полосы или не работает сенсор.</p><span>от 2 500 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+        <article class="service-card reveal" data-category="hardware" data-title="Замена батареи" data-en-title="Battery replacement" data-details="Проверим состояние аккумулятора и заменим его при необходимости." data-en-details="We check battery health and replace it if necessary." data-price="от 1 500 ₽">
+          <div class="service-icon">⌁</div><h3 data-i18n="battery">Замена батареи</h3><p data-i18n="batteryDesc">Если смартфон быстро разряжается или выключается.</p><span>от 1 500 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+        <article class="service-card reveal" data-category="hardware" data-title="Ремонт разъёма" data-en-title="Charging port repair" data-details="Проверим кабель и разъём, устраним проблему с зарядкой." data-en-details="We inspect the cable and port and troubleshoot charging issues." data-price="от 1 200 ₽">
+          <div class="service-icon">⌕</div><h3 data-i18n="port">Ремонт разъёма</h3><p data-i18n="portDesc">Если телефон плохо заряжается или не видит кабель.</p><span>от 1 200 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+        <article class="service-card reveal" data-category="hardware" data-title="Чистка динамика" data-en-title="Speaker cleaning" data-details="Аккуратно очистим сетку динамика и проверим громкость." data-en-details="We carefully clean the speaker mesh and test the sound." data-price="от 800 ₽">
+          <div class="service-icon">◉</div><h3 data-i18n="speaker">Чистка динамика</h3><p data-i18n="speakerDesc">Если звук стал тихим или собеседника плохо слышно.</p><span>от 800 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+        <article class="service-card reveal" data-category="hardware" data-title="Ремонт после воды" data-en-title="Water damage service" data-details="Проведём диагностику устройства после контакта с жидкостью." data-en-details="We diagnose the device after liquid exposure." data-price="от 1 000 ₽">
+          <div class="service-icon">⚙</div><h3 data-i18n="water">Ремонт после воды</h3><p data-i18n="waterDesc">Проверка устройства и восстановление повреждённых компонентов.</p><span>от 1 000 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+        <article class="service-card reveal" data-category="software" data-title="Настройка ПО" data-en-title="Software setup" data-details="Поможем с настройкой системы, обновлением и устранением ошибок." data-en-details="We help configure the system, update software and troubleshoot errors." data-price="от 700 ₽">
+          <div class="service-icon">⌘</div><h3 data-i18n="software">Настройка ПО</h3><p data-i18n="softwareDesc">Помощь с обновлением, настройкой и устранением ошибок.</p><span>от 700 ₽</span><button class="details-btn" data-i18n="details">Подробнее</button>
+        </article>
+      </div>
+      <p class="empty-result" id="emptyResult" data-i18n="emptyResult">Услуги не найдены. Попробуйте изменить запрос.</p>
+    </section>
+
+    <section class="price-section section" id="prices">
+      <div class="section-heading"><p class="eyebrow" data-i18n="priceEyebrow">ПОНЯТНАЯ СТОИМОСТЬ</p><h2 data-i18n="calculatorTitle">Калькулятор ремонта</h2><p data-i18n="calculatorIntro">Выберите неисправности — сайт рассчитает примерную стоимость.</p></div>
+      <div class="calculator">
+        <div class="calc-options">
+          <label class="check-row"><input type="checkbox" class="repair-option" value="2500"> <span data-i18n="screen">Замена экрана</span><b>2 500 ₽</b></label>
+          <label class="check-row"><input type="checkbox" class="repair-option" value="1500"> <span data-i18n="battery">Замена батареи</span><b>1 500 ₽</b></label>
+          <label class="check-row"><input type="checkbox" class="repair-option" value="1200"> <span data-i18n="port">Ремонт разъёма</span><b>1 200 ₽</b></label>
+          <label class="check-row"><input type="checkbox" class="repair-option" value="800"> <span data-i18n="speaker">Чистка динамика</span><b>800 ₽</b></label>
+          <label class="check-row"><input type="checkbox" class="repair-option" value="1000"> <span data-i18n="water">Диагностика после воды</span><b>1 000 ₽</b></label>
+          <label class="check-row"><input type="checkbox" class="repair-option" value="700"> <span data-i18n="software">Настройка ПО</span><b>700 ₽</b></label>
+        </div>
+        <div class="calc-result"><p data-i18n="estimatedCost">Предварительная стоимость</p><strong id="total">0 ₽</strong><small data-i18n="exactPrice">Точная цена определяется после диагностики.</small><a href="#request" class="btn btn-primary" data-i18n="bookRepair">Записаться на ремонт</a></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-art"><div class="tool-circle">⚒</div><div class="about-tag" data-i18n="tagline">Качество • Надёжность • Забота</div></div>
+      <div class="about-copy"><p class="eyebrow" data-i18n="whyUs">ПОЧЕМУ FIXPOINT</p><h2 data-i18n="aboutTitle">Техника в надёжных руках</h2><p data-i18n="aboutText">Мы помогаем продлить срок службы смартфонов. Перед ремонтом проводим диагностику, согласовываем стоимость и объясняем, какие работы необходимы.</p><ul><li data-i18n="benefit1">✓ Согласование цены до начала ремонта</li><li data-i18n="benefit2">✓ Аккуратная работа с устройством</li><li data-i18n="benefit3">✓ Гарантия на выполненные работы</li><li data-i18n="benefit4">✓ Удобная запись онлайн</li></ul></div>
+    </section>
+
+    <section class="slider-section section">
+      <div class="section-heading"><p class="eyebrow" data-i18n="sliderEyebrow">НАШ ПОДХОД</p><h2 data-i18n="sliderTitle">Ремонт по шагам</h2></div>
+      <div class="slider">
+        <button class="slider-arrow" id="slidePrev" aria-label="Предыдущий слайд">‹</button>
+        <div class="slide-window"><div class="slide-track" id="slideTrack">
+          <article class="slide"><span>01</span><h3 data-i18n="step1Title">Диагностика</h3><p data-i18n="step1Text">Проверяем устройство и определяем причину неисправности.</p></article>
+          <article class="slide"><span>02</span><h3 data-i18n="step2Title">Согласование</h3><p data-i18n="step2Text">Объясняем решение, сроки и предварительную стоимость.</p></article>
+          <article class="slide"><span>03</span><h3 data-i18n="step3Title">Ремонт и проверка</h3><p data-i18n="step3Text">Выполняем работу и проверяем основные функции смартфона.</p></article>
+        </div></div>
+        <button class="slider-arrow" id="slideNext" aria-label="Следующий слайд">›</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"><button class="dot active" aria-label="Слайд 1"></button><button class="dot" aria-label="Слайд 2"></button><button class="dot" aria-label="Слайд 3"></button></div>
+    </section>
+
+    <section class="request-section section" id="request">
+      <div class="section-heading"><p class="eyebrow" data-i18n="contactEyebrow">ОСТАЛИСЬ ВОПРОСЫ?</p><h2 data-i18n="requestTitle">Оставить заявку</h2><p data-i18n="requestIntro">Заполните форму, и наш специалист свяжется с вами.</p></div>
+      <form class="request-form" name="repair-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="requestForm">
+        <input type="hidden" name="form-name" value="repair-request">
+        <p class="hidden"><label>Не заполняйте это поле: <input name="bot-field"></label></p>
+        <div class="form-grid">
+          <label><span data-i18n="yourName">Ваше имя</span><input type="text" name="name" id="name" placeholder="Например, Иван" required minlength="2"></label>
+          <label><span data-i18n="yourPhone">Телефон</span><input type="tel" name="phone" id="phone" placeholder="+7 (___) ___-__-__" required></label>
+        </div>
+        <label><span data-i18n="problemLabel">Что случилось с телефоном?</span>
+          <select id="problem" name="problem" required><option value="" data-i18n="chooseProblem">Выберите неисправность</option><option>Разбит экран</option><option>Быстро разряжается</option><option>Не заряжается</option><option>Проблемы со звуком</option><option>Попала вода</option><option>Другая проблема</option></select>
+        </label>
+        <button class="btn btn-primary" type="submit" data-i18n="sendRequest">Отправить заявку</button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div><a class="logo" href="#home"><span class="logo-mark">F</span> FixPoint</a><p data-i18n="footerText">Ремонт смартфонов с заботой о вашей технике.</p></div>
+    <div><b data-i18n="contacts">Контакты</b><p>8 (800) 555-35-35</p><p data-i18n="hours">Ежедневно: 10:00–20:00</p></div>
+    <div><b data-i18n="address">Адрес</b><p data-i18n="sampleAddress">г. Улан-Удэ, ул. Примерная, 10</p><p>© 2026 FixPoint</p></div>
+  </footer>
+
+  <div class="modal" id="serviceModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+      <p class="eyebrow">FIXPOINT</p><h2 id="modalTitle"></h2><p id="modalText"></p><strong id="modalPrice"></strong>
+      <a class="btn btn-primary" href="#request" id="modalRequest" data-i18n="requestBtn">Оставить заявку</a>
+    </div>
+  </div>
+  <button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+</body>
+</html>

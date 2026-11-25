@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>404 — Страница не найдена | FixPoint</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background: radial-gradient(circle, #1c3b36, #0c1018 70%);
+        }
+
+        .error-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 45px 30px;
+            text-align: center;
+            background: #111a25;
+            border: 1px solid #405365;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 60px #0007;
+        }
+
+        .error-number {
+            font-size: clamp(100px, 22vw, 170px);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--accent, #52d6a3);
+            margin: 25px 0;
+        }
+
+        .error-container h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .error-text {
+            color: var(--muted, #aab4c0);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .error-url {
+            display: block;
+            padding: 13px;
+            margin-bottom: 25px;
+            overflow-wrap: anywhere;
+            background: #080d14;
+            border: 1px solid #405365;
+            border-radius: 10px;
+            color: var(--accent, #52d6a3);
+            font-size: 13px;
+        }
+
+        .error-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .error-buttons a,
+        .error-buttons button {
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .home-button {
+            background: var(--accent, #52d6a3);
+            color: #08120f;
+            border: none;
+        }
+
+        .back-button {
+            background: transparent;
+            color: white;
+            border: 1px solid #536171;
+        }
+
+        .error-buttons a:hover,
+        .error-buttons button:hover {
+            opacity: 0.8;
+        }
+
+        .error-footer {
+            margin-top: 30px;
+            color: #84909e;
+            font-size: 12px;
+        }
+
+        @media (max-width: 450px) {
+            .error-buttons a,
+            .error-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="error-page">
+        <div class="error-container">
+
+            <a href="/" class="logo">
+                <span class="logo-mark">F</span> FixPoint
+            </a>
+
+            <div class="error-number">404</div>
+
+            <h1>Страница не найдена</h1>
+
+            <p class="error-text">
+                К сожалению, такой страницы не существует.
+                Возможно, вы неправильно ввели адрес
+                или страница была удалена.
+            </p>
+
+            <span class="error-url" id="wrong-url"></span>
+
+            <div class="error-buttons">
+
+                <button class="back-button" onclick="goBack()">
+                    Вернуться назад
+                </button>
+
+                <a href="/" class="home-button">
+                    На главную
+                </a>
+
+            </div>
+
+            <div class="error-footer">
+                FixPoint — сервисный центр по ремонту смартфонов
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Показываем адрес, который пользователь открыл
+        document.getElementById("wrong-url").textContent =
+            window.location.href;
+
+        // Возвращаем пользователя на предыдущую страницу
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "/";
+            }
+        }
+    </script>
+
+</body>
+</html>
